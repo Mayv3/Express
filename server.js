@@ -1,11 +1,26 @@
-import express from "express"
-import peliculasRoute from "./routes/peliculas.routes.js"
-const app = express()
-// let contador = 0
+import express from "express";
+import Approute from "./routes/app.routes.js";
+import apiRoute from "./api/routes/projects.route.js"
+import mongoose from "mongoose";
+import dotenv from "dotenv";
 
-// app.use( express.static("public") )
-app.use( express.urlencoded({ extended: true }) )
+const app = express();
+dotenv.config();
 
-app.use(peliculasRoute)
+const PORT = process.env.PORT;
+const MONGOURL = process.env.MONGO_URL;
 
-app.listen(2026, () => console.log("Servidor funcionando"))
+mongoose.connect(MONGOURL)
+    .then(()=>{
+        console.log("Db conectada correctamente")
+        app.listen(PORT, () => console.log("Servidor funcionando"))
+    })
+    .catch((err)=>{
+        console.log(`Ha ocurrido un error al conectar la base de datos: ${err}`)
+    })
+
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
+app.use('/api', apiRoute)
+app.use(Approute)

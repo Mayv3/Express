@@ -1,0 +1,34 @@
+[
+    {
+        "_id": "66f5dc69892190de00cd4225",
+        "name": "Nico",
+        "image": "nico.jpeg",
+        "description": "Desarrollador especializado en aplicaciones móviles y videojuegos.",
+        "projects": [
+            "App de Fitness",
+            "App de Compras",
+            "Landing Page de Restaurante",
+            "Landing Page de Evento",
+            "WebApp de Gestión de Clientes",
+            "eCommerce de Juguetes",
+            "Juego de Aventura",
+            "Juego de Carreras"
+        ]
+    },
+    {
+        "_id": "66f5dd658ca60f7a60736c5e",
+        "name": "Sofía",
+        "image": "sofia.jpeg",
+        "description": "Desarrolladora web full stack con experiencia en eCommerce.",
+        "projects": [
+            "App de Finanzas",
+            "App de Clima",
+            "Red Social de Viajes",
+            "Landing Page de Agencia Creativa",
+            "WebApp de Calendario",
+            "eCommerce de Ropa",
+            "eCommerce de Cosméticos",
+            "Juego de Estrategia"
+        ]
+    }
+]

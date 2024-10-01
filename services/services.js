@@ -18,6 +18,7 @@ async function getAllProjects (name = null, type = null) {
 
         if(!projects || projects.length == 0){
             console.log('No hay proyectos por ahora')
+            return []
         }else{
             return projects;
         }
@@ -64,10 +65,9 @@ async function newProject(req) {
 }
 async function deleteProject(id){
     try{
-        if (!id){
-            throw new Error(`El proyecto con el id: ${id} no fue encontrado`)
-        }
+        
         const deletedProject = await ProjectModel.findByIdAndDelete(id);
+        
         return deletedProject
     }catch(err){
         console.log(`Ha ocurrido un error al eliminar el proyecto con el id: ${id}. Error: ${err} `)
@@ -92,7 +92,6 @@ async function getAllUsers(){
     }catch(err){
         console.log(err)
     }
-   
 }
 async function newUser(req){
     try {
